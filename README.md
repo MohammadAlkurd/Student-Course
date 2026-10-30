@@ -1,8 +1,31 @@
-A many to many relationship happens when a record from table A is connected to multiple records from table B
-and a record from table B is also connected to multiple records from table A
-an example is the relation between Student_Table and Course_table
-each student can enroll into 1 course or more 
-and each course has 1 or more student in it.
+# Student-Course API
 
-since this relation is impossible to implement using only 2 table we make a third join table
-containing 2 forein keys from the 2 Tables and its own primary key
+A RESTful API built with **ASP.NET Core 8** and **Entity Framework Core** demonstrating a **many-to-many** relationship between students and courses.
+
+## The data model
+
+A many-to-many relationship means a student can enroll in many courses, and each course can have many students. Since this can't be expressed with only two tables, a **join table** (`StudentCourse`) holds two foreign keys — one to `Student`, one to `Course`.
+
+```
+Student  1 ─── n  StudentCourse  n ─── 1  Course
+```
+
+## Stack
+
+- ASP.NET Core 8 (Web API)
+- Entity Framework Core 8 + SQL Server
+- Swagger / OpenAPI (Swashbuckle)
+- Docker Compose setup for the database (`DockerDatabase/`)
+
+## Endpoints
+
+- `StudentController` — CRUD for students
+- `CourseController` — CRUD for courses
+
+## Running locally
+
+```bash
+dotnet restore
+dotnet ef database update   # or start the DB via DockerDatabase/
+dotnet run --project Student-Course
+```
