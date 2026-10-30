@@ -1,6 +1,6 @@
 # Student-Course API
 
-A RESTful API built with **ASP.NET Core 8** and **Entity Framework Core** demonstrating a **many-to-many** relationship between students and courses.
+A RESTful API built with **ASP.NET Core 8** and **Entity Framework Core** demonstrating a **many-to-many** relationship between students and courses. Built as a bootcamp homework assignment.
 
 ## The data model
 
@@ -15,7 +15,7 @@ Student  1 ─── n  StudentCourse  n ─── 1  Course
 - ASP.NET Core 8 (Web API)
 - Entity Framework Core 8 + SQL Server
 - Swagger / OpenAPI (Swashbuckle)
-- Docker Compose setup for the database (`DockerDatabase/`)
+- Docker setup for the database (`DockerDatabase/`)
 
 ## Endpoints
 
